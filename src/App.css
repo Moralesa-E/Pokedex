@@ -1,38 +1,327 @@
-.App {
-  text-align: center;
+:root {
+  --steel: #5a8ea2;
+  --water: #4e91d6;
+  --bug: #92c12a;
+  --dragon: #036dc3;
+  --electric: #f4d339;
+  --ghost: #5169ae;
+  --fire: #fe9d53;
+  --fairy: #ec90e7;
+  --ice: #74cfc0;
+  --fighting: #ce3e6a;
+  --normal: #929aa2;
+  --grass: #62bc5a;
+  --psychic: #f97279;
+  --rock: #c6b88c;
+  --dark: #5a5265;
+  --ground: #d97942;
+  --poison: #aa6ac9;
+  --flying: #8faadf;
+  --neutral: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+  background-color: #ce3e6a;
+  margin: 0%;
+  position: sticky;
+  top: 0%;
+  width: 100%;
+  z-index: 1;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.header h4{
+  margin: 0%;
+  color: white;
+}
+.header button{
+  display: flex;
+  padding: 0%;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.header button:hover{
+  border-bottom: 1px white solid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.Card-Pokemon {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+
+  height: 250px;
+  margin: 20px 10px;
+  box-shadow: 5px 10px 18px #aaa;
+}
+.Card-Content{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+.BG {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Card-Img img {
+  width: 100%;
+
+}
+
+.Card-Img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+  top: 20px;
+  border: 1px solid;
+  border-color: transparent;
   }
+
+.Card-Data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Card-Data h1{
+  margin: 10% 0%;
+}
+.Types {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  
+}
+
+.d-flex-c{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+}
+.Types img{
+  width: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.Types h2,h3,h4,h5,h6{
+  margin: 0%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Types span{
+  font-size: smaller;
 }
+/* .grasspoison{
+  background-image: linear-gradient(to right, var(--grass),var(--poison));
+}
+.fire{
+  background-image: linear-gradient(to right, var(--neutral),var(--fire));
+}
+.fireflying{
+  background-image: linear-gradient(to right, var(--fire),var(--flying));
+}
+.water{
+  background-image: linear-gradient(to right, var(--neutral),var(--water));
+}
+.bug{
+  background-image: linear-gradient(to right, var(--neutral),var(--bug));
+}
+.bugflying{
+  background-image: linear-gradient(to right, var(--bug),var(--flying));
+}
+.bugpoison{
+  background-image: linear-gradient(to right, var(--bug),var(--poison));
+}
+.flyingnormal{
+  background-image: linear-gradient(to right, var(--normal),var(--flying));
+}
+.normal{
+  background-image: linear-gradient(to right, var(--neutral),var(--normal));
+}
+.poison{
+  background-image: linear-gradient(to right, var(--neutral),var(--poison));
+}
+.electric{
+  background-image: linear-gradient(to right, var(--neutral),var(--electric));
+}
+.ground{
+  background-image: linear-gradient(to right, var(--neutral),var(--ground));
+}
+.groundpoison{
+  background-image: linear-gradient(to right, var(--ground),var(--poison));
+}
+.fairy{
+  background-image: linear-gradient(to right, var(--neutral),var(--fairy));
+}
+.fairynormal{
+  background-image: linear-gradient(to right, var(--normal),var(--fairy));
+}
+.flyingpoison{
+  background-image: linear-gradient(to right, var(--poison),var(--flying));
+}
+.buggrass{
+  background-image: linear-gradient(to right, var(--bug),var(--grass));
+}
+.fighting{
+  background-image: linear-gradient(to right, var(--neutral),var(--fighting));
+}
+.poisonwater{
+  background-image: linear-gradient(to right, var(--water),var(--poison));
+}
+.groundrock{
+  background-image: linear-gradient(to right, var(--rock),var(--ground));
+}
+.psychicwater{
+  background-image: linear-gradient(to right, var(--water),var(--psychic));
+}
+.electricsteel{
+  background-image: linear-gradient(to right, var(--electric),var(--steel));
+}
+.icewater{
+  background-image: linear-gradient(to right, var(--water),var(--ice));
+}
+.ghostpoison{
+  background-image: linear-gradient(to right, var(--ghost),var(--poison));
+}
+.psychic{
+  background-image: linear-gradient(to right, var(--neutral),var(--psychic));
+}
+.grasspsychic{
+  background-image: linear-gradient(to right, var(--grass),var(--psychic));
+}
+.grass{
+  background-image: linear-gradient(to right, var(--neutral),var(--grass));
+}
+.fairypsychic{
+  background-image: linear-gradient(to right, var(--fairy),var(--psychic));
+}
+.icepsychic{
+  background-image: linear-gradient(to right, var(--ice),var(--psychic));
+}
+.flyingwater{
+  background-image: linear-gradient(to right, var(--water),var(--flying));
+}
+.rockwater{
+  background-image: linear-gradient(to right, var(--rock),var(--water));
+}
+.flyingrock{
+  background-image: linear-gradient(to right, var(--rock),var(--flying));
+}
+.flyingice{
+  background-image: linear-gradient(to right, var(--ice),var(--flying));
+}
+.electricflying{
+  background-image: linear-gradient(to right, var(--electric),var(--flying));
+}
+.dragon{
+  background-image: linear-gradient(to right, var(--neutral),var(--dragon));
+}
+.dragonflying{
+  background-image: linear-gradient(to right, var(--dragon),var(--flying));
+}
+.electricwater{
+  background-image: linear-gradient(to right, var(--water),var(--electric));
+}
+.fairyflying{
+  background-image: linear-gradient(to right, var(--fairy),var(--flying));
+}
+.flyingpsychic{
+  background-image: linear-gradient(to right, var(--psychic),var(--flying));
+}
+.fairywater{
+  background-image: linear-gradient(to right, var(--water),var(--fairy));
+}
+.rock{
+  background-image: linear-gradient(to right, var(--neutral),var(--rock));
+}
+.flyinggrass{
+  background-image: linear-gradient(to right, var(--grass),var(--flying));
+}
+.groundwater{
+  background-image: linear-gradient(to right, var(--water),var(--ground));
+}
+.dark{
+  background-image: linear-gradient(to right, var(--neutral),var(--dark));
+}
+.darkflying{
+  background-image: linear-gradient(to right, var(--dark),var(--flying));
+}
+.ghost{
+  background-image: linear-gradient(to right, var(--neutral),var(--ghost));
+}
+.normalpsychic{
+  background-image: linear-gradient(to right, var(--normal),var(--psychic));
+}
+.bugsteel{
+  background-image: linear-gradient(to right, var(--bug),var(--steel));
+}
+.flyingground{
+  background-image: linear-gradient(to right, var(--ground),var(--flying));
+}
+.groundsteel{
+  background-image: linear-gradient(to right, var(--steel),var(--ground));
+}
+.bugrock{
+  background-image: linear-gradient(to right, var(--bug),var(--rock));
+}
+.bugfighting{
+  background-image: linear-gradient(to right, var(--bug),var(--fighting));
+}
+.darkice{
+  background-image: linear-gradient(to right, var(--dark),var(--ice));
+}
+.firerock{
+  background-image: linear-gradient(to right, var(--fire),var(--rock));
+}
+.icerock{
+  background-image: linear-gradient(to right, var(--ice),var(--rock));
+}
+.flyingsteel{
+  background-image: linear-gradient(to right, var(--steel),var(--flying));
+}
+.darkfire{
+  background-image: linear-gradient(to right, var(--dark),var(--fire));
+}
+.dragonwater{
+  background-image: linear-gradient(to right, var(--water),var(--dragon));
+}
+.darkrock{
+  background-image: linear-gradient(to right, var(--rock),var(--dark));
+}
+.grasswater{
+  background-image: linear-gradient(to right, var(--grass),var(--water));
+}
+.darkgrass{
+  background-image: linear-gradient(to right, var(--grass),var(--dark));
+}
+.bugwater{
+  background-image: linear-gradient(to right, var(--bug),var(--water));
+}
+.fightinggrass{
+  background-image: linear-gradient(to right, var(--grass),var(--fighting));
+}
+.bugground{
+  background-image: linear-gradient(to right, var(--ground),var(--flying));
+}
+.flyingground{
+  background-image: linear-gradient(to right, var(--ground),var(--flying));
+} */

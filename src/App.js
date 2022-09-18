@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Regions from './Regions/Regions';
+
 import './App.css';
 
+const url = "https://pokeapi.co/api/v2/region/";
+
 function App() {
+
+  const [Pokemons, setPokemons] = useState(null)
+  const [Region, setRegion] = useState("kanto")
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setPokemons(response.data.results);
+      // console.log(response.data.results)
+    });
+  }, [])
+  if (!Pokemons) return null;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section >
+      <div className='header'>
+        <h4>POKEDEX</h4>
+        {Pokemons.map((u, v) => <button onClick={() => setRegion(u.name)} key={v}>{u.name}</button>)}
+
+      </div>
+      <div>
+        <Regions region={Region} />
+      </div>
+    </section>
   );
 }
 
